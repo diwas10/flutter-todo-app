@@ -28,18 +28,18 @@ class CustomDropdown<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return DropdownButton(
       value: dropdownValue,
-      icon: const Icon(
-        Icons.filter_frames_outlined,
-        color: Colors.deepPurpleAccent,
+      icon: Icon(
+        Icons.filter_alt_outlined,
+        color: Theme.of(context).primaryColor,
       ),
       iconSize: 24,
       elevation: 16,
       underline: Container(
         height: 2,
-        color: Colors.deepPurpleAccent,
+        color: Theme.of(context).primaryColor,
       ),
       onChanged: onChanged,
-      style: const TextStyle(color: Colors.deepPurple),
+      style: TextStyle(color: Theme.of(context).primaryColor),
       items: items.map<DropdownMenuItem<String>>((value) {
         return DropdownMenuItem<String>(
           value: value.value,

@@ -11,15 +11,13 @@ class ComapreDateTime {
     return time <= fTime;
   }
 
-  bool compareDateTime(DateTime initialDate, DateTime finalDate,
-      TimeOfDay initialTime, TimeOfDay finalTime) {
-    final date = compareDate(initialDate, finalDate);
-    final time = compareTime(initialTime, finalTime);
+  bool compareDateTime(DateTime? initialDate, DateTime finalDate,
+      TimeOfDay? initialTime, TimeOfDay finalTime) {
+    if (initialDate == null) return false;
 
-    if (date) {
-      return date;
-    } else {
-      return time && date;
-    }
+    final date = compareDate(initialDate, finalDate);
+    final time =
+        initialTime == null ? false : compareTime(initialTime, finalTime);
+    return time && date;
   }
 }
